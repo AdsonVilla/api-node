@@ -1,0 +1,11 @@
+# Arquivos de backup criados pelo sistema
+*~
+
+# Arquivos de log
+*.log
+
+# Diretório de dependências
+/node_modules/
+
+# Arquivo de configuração com credenciais
+config.json
