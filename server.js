@@ -10,14 +10,21 @@ app.post('/users', (req, res) => {
 
     users.push(req.body)
 
-    res.send('It works!')
+    res.status(201).json(req.body)
 })
 
 app.get('/users', (req, res) => {
 
-    res.json(users)
+    res.status(200).json(users)
 })
 
 console.log("Server is running!")
 
 app.listen(3001)
+
+
+
+/*
+user: adson 
+password: 3JpxPZ1tXNVS7aKq
+*/
