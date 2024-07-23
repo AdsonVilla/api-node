@@ -2,9 +2,22 @@ import express from 'express'
 
 const app = express()
 
+app.use(express.json())
+
+const users = []
+
+app.post('/users', (req, res) => {
+
+    users.push(req.body)
+
+    res.send('It works!')
+})
+
 app.get('/users', (req, res) => {
 
-    res.send('Hello world')
+    res.json(users)
 })
+
+console.log("Server is running!")
 
 app.listen(3001)
