@@ -1,0 +1,35 @@
+version: '2.27.1'
+
+services:
+  app:
+    build: .
+
+    image: node:22.5.1
+    depends_on:
+      - db
+    
+    ports:
+      - "3005:3005"
+
+    environment:
+      DATABASE_URL: "mongodb+srv://adson:3JpxPZ1tXNVS7aKq@my-users.m8ej6im.mongodb.net/My-Users?retryWrites=true&w=majority&appName=My-Users"
+      NODE_ENV: "development"
+
+    networks:
+      - node-api
+
+  db:
+    image: mongo
+
+    environment:
+      MONGO_PASSWORD: "3JpxPZ1tXNVS7aKq"
+
+    ports:
+      - "49555:27017"
+
+    networks:
+      - node-api
+
+networks:
+  node-api:
+    driver: bridge

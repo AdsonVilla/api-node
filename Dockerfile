@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3001
+RUN npx prisma generate
 
-CMD ["nodemon", "server.js"]
+EXPOSE 3005
+
+CMD [ "npm", "start" ]
