@@ -33,3 +33,11 @@ services:
 networks:
   node-api:
     driver: bridge
+
+
+
+# para subir os containeres
+# docker-compose build
+# docker-compose up -d
+# docker exec -it <container_id> bash -> executar ações dentro do container (interagir com o container)
+# docker-compose down -> remove os containeres criados
